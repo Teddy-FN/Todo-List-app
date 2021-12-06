@@ -1,0 +1,19 @@
+.container-header {
+  background-color:#e03131;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.list-page {
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  text-decoration: none;
+}
+
+.container-title {
+  display: inline-block;
+}

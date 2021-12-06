@@ -1,0 +1,28 @@
+@import 'mixins';
+@import 'typography';
+@import "./utils";
+
+*::before,
+*::after {
+  box-sizing: border-box;
+  outline: none;
+  border: 0;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  min-width: 100%;
+  min-height: 100vh;
+  // font-family: 'ReadexPro';
+  font-size: 14px; // 1 rem = 14px
+  scroll-behavior: smooth;
+  @include breakpoint(md) {
+    font-size: 16px; // Tablet 1 rem = 16px
+  }
+}
+
+h1 {
+  font-size: 2rem;
+}

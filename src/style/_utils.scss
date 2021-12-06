@@ -1,0 +1,16 @@
+.grid-col {
+  display: grid;
+  grid-template-columns: auto;
+
+  &.two {
+    @include breakpoint(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &.one {
+    @include breakpoint(xs) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

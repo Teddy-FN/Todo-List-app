@@ -1,0 +1,164 @@
+@keyframes fadeOut {
+  from {opacity:1;}
+  to {opacity:0;}
+}
+
+.containers {
+  padding: 20px;
+  &__grid-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    // grid-auto-rows: 45% 100%;
+
+    &.one {
+      
+    }
+  }
+
+  &__forms {
+    padding: 10px;
+    background-color: #ddd;
+    border-radius: 10px;
+    box-shadow: 5px 8px 5px #888888;
+  }
+
+  &__list {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ddd;
+    box-shadow: 5px 8px 5px #888888;
+  }
+}
+
+// FORMS
+.form_container {
+  width: 100%;
+
+  &__input_style {
+    margin-bottom: 20px;
+  }
+  &__input_style:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.input_text {
+  width: 80%;
+  height: 2.5rem;
+  border-radius: .5rem;
+  border: 1px solid grey;
+}
+
+
+// LIST
+.list_items {
+  background-color: green;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+
+  &.hide {
+    display: none;
+  }
+
+  &__headers {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+  }
+
+  &__items {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    &__button_wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-self: center;
+      gap: 10px;
+    } 
+  }
+}
+
+
+
+.container_upcomming_events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+}
+
+
+.btn_complete {
+  background-color: rgb(204, 204, 15);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.btn_edit {
+  background-color: green;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.btn_delete {
+  background-color: red;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.btn_submit {
+  background-color: blue;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #fff; 
+  width: 100%;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 800;
+}
+.btn_close {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+
+// NOTIFICATION ERROR STYLE
+.notification_error {
+  margin-top: 10px;
+  padding: 1px;
+  background-color: red;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  animation: fadeOut 2000s;
+}
+
+
+// COMPLETE TASK
+.complete_task {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 8px 5px #888888;
+}
