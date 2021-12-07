@@ -12,10 +12,8 @@ const List = ({
   const handlerDeleteItems = (id) => {
     handlerDeletes(id);
   };
-
   const handlerEditItems = (id) => {
     handlerEditTodo(id);
-    // setHides(true);
   };
   const handlerCompleteItems = (id) => {
     handlerCompleteTask(id);

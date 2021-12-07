@@ -3,9 +3,7 @@ import { Icons } from "../../../assets";
 import Buttons from "../../../pages/Button";
 import "./style.scss";
 
-const Form = ({ addToDoDatas, edit }) => {
-  console.log('INI EDIT', edit);
-
+const Form = ({ addToDoDatas }) => {
   const [name, setName] = useState("");
   const [toDo, setToDo] = useState("");
   const [dates, setDates] = useState("");
@@ -22,7 +20,6 @@ const Form = ({ addToDoDatas, edit }) => {
   const handlerDates = (e) => {
     setDates(e.target.value);
   };
-  console.log('INI NAME', name);
 
   const handlerSubmitToDo = (e) => {
     e.preventDefault();
@@ -79,7 +76,7 @@ const Form = ({ addToDoDatas, edit }) => {
 
       {error && (
         <div className="notification_error">
-          <p>You must fill all todos</p>
+          <p className="text_error">You must fill all todos</p>
           <Buttons title="X" onClick={handlerCloseErrNotif} className="btn_close" />
         </div>
       )}
