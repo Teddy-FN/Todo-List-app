@@ -16,4 +16,10 @@
 
 .container-title {
   display: inline-block;
+  color: #fff;
+}
+
+.linkTitle {
+  color: #fff;
+  text-decoration: none;
 }

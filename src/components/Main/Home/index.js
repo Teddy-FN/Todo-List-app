@@ -3,8 +3,6 @@ import Form from "./Form";
 import List from "./List";
 import CompleteToDo from "./CompleteToDo";
 import "./style.scss";
-import Modal from "./Modal";
-import { faFontAwesomeLogoFull } from "@fortawesome/free-solid-svg-icons";
 
 const DATAS = [
   {
@@ -37,7 +35,6 @@ const Home = () => {
   const [datas, setDatas] = useState(DATAS);
   const [edit, setEdits] = useState([]);
   const [completeTask, setCompleteTask] = useState(0)
-  const [completeItems, setCompleteItems] = useState([])
 
   // HANDLER ADD TODOS
   const addToDoDatas = (datas) => {
@@ -81,9 +78,6 @@ const Home = () => {
     });
     setCompleteTask(completeTask + 1)
   };
-
-  console.log('completeItems', completeItems);
-
   
   return (
     <div className="containers">
