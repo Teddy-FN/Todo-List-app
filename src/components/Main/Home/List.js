@@ -24,7 +24,7 @@ const List = ({
   return datas.length > 0 ? (
     datas.map((items) => {
       return (
-        <div key={items.id} className="list_item">
+        <div key={items.id} className="list_items">
           <div className="list_items__headers">
             <p>Name : {items.names}</p>
             <p>Date : {items.date}</p>
@@ -50,8 +50,6 @@ const List = ({
                 className="btn_delete"
                 icons={Icons.faTrash}
               />
-
-
             </div>
           </div>
         </div>

@@ -161,4 +161,15 @@
   padding: 10px;
   border-radius: 10px;
   box-shadow: 5px 8px 5px #888888;
+
+  &__count {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid grey;
+  }
+
+  &__list_task {
+    margin-top: 10px;
+  }
 }

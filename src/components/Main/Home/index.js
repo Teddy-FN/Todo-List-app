@@ -4,38 +4,40 @@ import List from "./List";
 import CompleteToDo from "./CompleteToDo";
 import "./style.scss";
 import Modal from "./Modal";
+import { faFontAwesomeLogoFull } from "@fortawesome/free-solid-svg-icons";
 
 const DATAS = [
   {
     id: 1,
-    names: "TEST",
+    names: "JONI",
     toDos: "EAT",
     date: "20 / 11 / 2021",
   },
   {
     id: 2,
-    names: "TEST",
-    toDos: "EAT",
+    names: "DINA",
+    toDos: "SHOWER",
     date: "20 / 11 / 2021",
   },
   {
     id: 3,
-    names: "TEST",
-    toDos: "EAT",
+    names: "JK",
+    toDos: "FUTSAL",
     date: "20 / 11 / 2021",
   },
   {
     id: 4,
-    names: "TEST",
-    toDos: "EAT",
+    names: "YUYU",
+    toDos: "GAMES",
     date: "20 / 11 / 2021",
   },
 ];
 
 const Home = () => {
   const [datas, setDatas] = useState(DATAS);
-  const [count, setCount] = useState(0);
   const [edit, setEdits] = useState([]);
+  const [completeTask, setCompleteTask] = useState(0)
+  const [completeItems, setCompleteItems] = useState([])
 
   // HANDLER ADD TODOS
   const addToDoDatas = (datas) => {
@@ -77,8 +79,10 @@ const Home = () => {
       const toDoDatas = items.filter((items) => items.id !== id);
       return toDoDatas;
     });
-    setCount(count + 1);
+    setCompleteTask(completeTask + 1)
   };
+
+  console.log('completeItems', completeItems);
 
   
   return (
@@ -87,7 +91,7 @@ const Home = () => {
         <div className="containers__forms">
           <h2>Add Your Todo</h2>
           <Form addToDoDatas={addToDoDatas} edit={edit} />
-          <CompleteToDo count={count} />
+          <CompleteToDo datas={completeTask}/>
         </div>
         <div className="containers__list">
           <h2>Your Todo List</h2>
