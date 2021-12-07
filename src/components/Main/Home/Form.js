@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Icons } from "../../../assets";
 import Buttons from "../../../pages/Button";
 import "./style.scss";
 
-const Form = ({ addToDoDatas }) => {
+const Form = ({ addToDoDatas, namesUser, todosUser, dateUser }) => {
   const [name, setName] = useState("");
   const [toDo, setToDo] = useState("");
   const [dates, setDates] = useState("");
@@ -20,6 +20,18 @@ const Form = ({ addToDoDatas }) => {
   const handlerDates = (e) => {
     setDates(e.target.value);
   };
+
+  useEffect(() => {
+    if (namesUser !== '')  {
+      setName(namesUser)
+    }
+    if (todosUser !== '') {
+      setToDo(todosUser)
+    }
+    if (dateUser !== '') {
+      setDates(dateUser)
+    }
+  }, [namesUser, todosUser, dateUser, setName, setToDo, setDates])
 
   const handlerSubmitToDo = (e) => {
     e.preventDefault();
@@ -77,7 +89,11 @@ const Form = ({ addToDoDatas }) => {
       {error && (
         <div className="notification_error">
           <p className="text_error">You must fill all todos</p>
-          <Buttons title="X" onClick={handlerCloseErrNotif} className="btn_close" />
+          <Buttons
+            title="X"
+            onClick={handlerCloseErrNotif}
+            className="btn_close"
+          />
         </div>
       )}
     </>

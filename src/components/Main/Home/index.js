@@ -9,32 +9,35 @@ const DATAS = [
     id: 1,
     names: "JONI",
     toDos: "EAT",
-    date: "20 / 11 / 2021",
+    date: "2021-12-07",
   },
   {
     id: 2,
     names: "DINA",
     toDos: "SHOWER",
-    date: "20 / 11 / 2021",
+    date: "2021-12-07",
   },
   {
     id: 3,
     names: "JK",
     toDos: "FUTSAL",
-    date: "20 / 11 / 2021",
+    date: "2021-12-07",
   },
   {
     id: 4,
     names: "YUYU",
     toDos: "GAMES",
-    date: "20 / 11 / 2021",
+    date: "2021-12-07",
   },
 ];
 
 const Home = () => {
   const [datas, setDatas] = useState(DATAS);
-  const [edit, setEdits] = useState([]);
-  const [completeTask, setCompleteTask] = useState(0)
+  const [completeTask, setCompleteTask] = useState(0);
+  // Edit
+  const [namesUser, setNamesUser] = useState("");
+  const [todosUser, setTodosUser] = useState("");
+  const [dateUser, setDateUser] = useState("");
 
   // HANDLER ADD TODOS
   const addToDoDatas = (datas) => {
@@ -59,15 +62,23 @@ const Home = () => {
       const toDoDatas = items.filter((items) => items.id !== id);
       return toDoDatas;
     });
-    setEdits(() => {
-      const selectedItems = datas.find((items) => items.id === id);
-      return {
-        id: selectedItems.id,
-        names: selectedItems.names,
-        toDos: selectedItems.toDos,
-        date: selectedItems.date,
-      };
+    // setEdits(() => {
+    //   const selectedItems = datas.find((items) => items.id === id);
+    //   return {
+    //     id: selectedItems.id,
+    //     names: selectedItems.names,
+    //     toDos: selectedItems.toDos,
+    //     date: selectedItems.date,
+    //   };
+    // });
+
+    const selectedData = datas.find((items) => {
+      return items.id === id;
     });
+    console.log(selectedData);
+    setNamesUser(selectedData.names);
+    setTodosUser(selectedData.toDos);
+    setDateUser(selectedData.date);
   };
 
   // HANDLER COMPLETE TASK
@@ -76,16 +87,21 @@ const Home = () => {
       const toDoDatas = items.filter((items) => items.id !== id);
       return toDoDatas;
     });
-    setCompleteTask(completeTask + 1)
+    setCompleteTask(completeTask + 1);
   };
-  
+
   return (
     <div className="containers">
       <div className="containers__grid-col two">
         <div className="containers__forms">
           <h2>Add Your Todo</h2>
-          <Form addToDoDatas={addToDoDatas} edit={edit} />
-          <CompleteToDo datas={completeTask}/>
+          <Form
+            addToDoDatas={addToDoDatas}
+            namesUser={namesUser}
+            todosUser={todosUser}
+            dateUser={dateUser}
+          />
+          <CompleteToDo datas={completeTask} />
         </div>
         <div className="containers__list">
           <h2>Your Todo List</h2>
